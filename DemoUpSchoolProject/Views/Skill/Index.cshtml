@@ -1,0 +1,37 @@
+﻿@model List<DemoUpSchoolProject.Models.Entities.TBL_Feature>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h2>YETENEKLERİM</h2>
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>BAŞLIK</th>
+        <th>DEĞER</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        sayac++;
+        <tr>
+            <td>
+                @sayac
+            </td>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.Value
+            </td>
+            <td><a href="/Skill/DeleteSkill/@item.ServicesFeatureID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Skill/UpdateSkill/@item.ServicesFeatureID" class="btn btn-success">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/Skill/AddSkill" class="btn btn-primary">Yeni Yetenek Girişi</a>
+
+

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "SendMessage";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<h2>Yeni Mesaj Gönder</h2>
+<form method="post">
+    <label>Alıcı Mail Adresi:</label>
+    <input type="mail" class="form-control" name="ReceiverMail" />
+    <br />
+    <label>Konu:</label>
+    <input type="text" class="form-control" name="MessageSubject" />
+    <br />
+    <label>Mesaj:</label>
+   <textarea cols="2" rows="5" name="MessageContent" class="form-control"></textarea>
+    <br />
+    <button type="submit" class="btn btn-warning">Mesaj Gönder</button>
+</form>

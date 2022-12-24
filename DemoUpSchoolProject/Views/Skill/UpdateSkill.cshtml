@@ -1,0 +1,21 @@
+﻿@model DemoUpSchoolProject.Models.Entities.TBL_Feature
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<h2>YETENEK GÜNCELLE</h2>
+<form method="post">
+    <input type="hidden" value="@Model.ServicesFeatureID" name="ServicesFeatureID"/> 
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <label>Değer</label>
+    @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">GÜNCELLE</button>
+</form>
+

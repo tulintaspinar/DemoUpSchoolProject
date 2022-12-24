@@ -1,0 +1,31 @@
+﻿@using DemoUpSchoolProject.Models.Entities
+@model List<TBL_About>
+@foreach (var item in Model)
+{
+    <section id="home" class="w3l-banner pb-5">
+        <div class="container pb-md-3">
+            <div class="banner-wrapper text-center">
+                <div class="">
+                    <span class="text">Hakkımda</span>
+                    <h1 class="mb-4 title">
+                        Merhaba, <span class="type-js"><span class="text-js">Ben @item.NameSurname</span></span><br>
+                        @item.Title
+                    </h1>
+                    <p class="mx-lg-5">
+                        @item.Description
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-lg-auto col-md-10">
+                        <img src="~/Template/iportfolio-starter/assets/images/banner.png" alt="" class="img-fluid mt-lg-5 mt-3">
+                    </div>
+                </div>
+                <ul class="follow-social">
+                    <li><p>Beni Takpi Et </p></li>
+                    <li><a href="#url"><span class="fa fa-linkedin"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+}
+

@@ -1,0 +1,28 @@
+﻿@model List<DemoUpSchoolProject.Models.Entities.TBL_Services>
+
+<section class="w3l-homeblock1" id="about">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                <div class="col-lg-6">
+                    <span class="text">Hizmetlerim</span>
+                    <h3 class="title-big"><span>Markanızı oluşturun</span> ve işinizi büyütün.</h3>
+                    <p class="mt-4">
+                    </p>
+                    <ul class="service-list mt-md-5 mt-4">
+                        @foreach (var item in Model)
+                        {
+                            <li class="service-link"><a>@item.Title</a></li>
+                        }
+                    </ul>
+                    @*<a href="#url" class="btn btn-style btn-empty p-0">View my all services <span></span></a>*@
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-5">
+                    <div class="position-relative">
+                        <img src="~/Template/iportfolio-starter/assets/images/about.jpg" alt="" class="radius-image img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

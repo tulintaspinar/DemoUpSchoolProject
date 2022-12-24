@@ -1,0 +1,48 @@
+﻿@model List<DemoUpSchoolProject.Models.Entities.TBL_Testimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<h2>REFERANSLAR</h2>
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>AD SOYAD</th>
+        <th>ŞEHİR</th>
+        <th>MESLEK</th>
+        <th>EMAİL</th>
+        <th>AÇIKLAMA</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.TestimonialID
+            </td>
+            <td>
+                @item.NameSurname
+            </td>
+            <td>
+                @item.City
+            </td>
+            <td>
+                @item.Profession
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Description
+            </td>
+            <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-success">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/Testimonial/AddTestimonial" class="btn btn-primary">Yeni Referans Kaydı</a>
+
+
+

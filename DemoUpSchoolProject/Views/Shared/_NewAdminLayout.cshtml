@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-inverse">
+        <a class="navbar-brand" href="/About/Index">Anasayfa</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/About/Index">Anasayfa <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/Services/Index">Hizmetler</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Skill/Index">Yetenekler</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Testimonial/Index">Referanslar</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Project/Index">Projelerim</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Statistic/Index">İstatistikler</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mesajlar
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/Message/SendMessage">Yeni Mesaj</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/Message/Inbox">Gelen Kutusu</a>
+                        <a class="dropdown-item" href="/Message/Outbox">Giden Kutusu</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/Member/Index">Ayarlar</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Çıkış Yap</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

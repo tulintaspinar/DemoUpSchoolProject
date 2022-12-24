@@ -1,0 +1,28 @@
+﻿@model DemoUpSchoolProject.Models.Entities.TBL_Member
+@{
+    ViewBag.Title = "UpdateMember";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<h2>BİLGİLERİNİ GÜNCELLE</h2>
+<form method="post" action="/Member/UpdateMember">
+    @Html.HiddenFor(x=>x.MemberID)
+    <div class="form-group">
+        <label>ADINIZ:</label>
+        <input type="text" class="form-control" name="MemberName" value="@Model.MemberName">
+    </div>
+    <div class="form-group">
+        <label>SOYADINIZ</label>
+        <input type="text" class="form-control" name="MemberSurname" value="@Model.MemberSurname">
+    </div>
+    <div class="form-group">
+        <label>EMAİL</label>
+        <input type="text" class="form-control" name="MemeberMail" value="@Model.MemeberMail">
+    </div>
+    <div class="form-group">
+        <label>ŞİFRE</label>
+        <input type="text" class="form-control" name="MemberPassword" value="@Model.MemberPassword">
+    </div>
+    <button class="btn btn-primary">KAYDET</button>
+
+</form>

@@ -1,0 +1,14 @@
+﻿@model DemoUpSchoolProject.Models.Entities.TBL_PROJECT
+@{
+    ViewBag.Title = "AddProject";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<form method="post">
+
+    <label>PROJE ADI</label>
+    <input type="text" name="ProjectName" />
+    <label>PROJE RESMİ</label>
+    <input type="file" name="ProjectImage" />
+    <button type="submit" class="btn btn-outline-dark"></button>
+</form>

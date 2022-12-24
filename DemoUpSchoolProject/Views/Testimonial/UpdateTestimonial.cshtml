@@ -1,0 +1,27 @@
+﻿@model DemoUpSchoolProject.Models.Entities.TBL_Testimonial
+@{
+    ViewBag.Title = "UpdateTestimonial";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<h2>REFERANS GÜNCELLE</h2>
+
+<form method="post">
+    <input type="hidden" value="@Model.TestimonialID" name="TestimonialID" />
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    <label>ŞEHİR</label>
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    <br />
+    <label>MESLEK</label>
+    @Html.TextBoxFor(x => x.Profession, new { @class = "form-control" })
+    <br />
+    <label>Email</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">KAYDET</button>
+</form>
