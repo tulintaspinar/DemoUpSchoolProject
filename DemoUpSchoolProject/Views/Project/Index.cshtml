@@ -4,28 +4,30 @@
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
     int count = 0;
 }
-<table class="table">
-    <caption>PROJELERİM</caption>
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">PROJE ADI</th>
-            <th scope="col">SİL</th>
-            <th scope="col">DÜZENLE</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            count++;
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<div class="container">
+    <table class="table">
+        <thead>
             <tr>
-                <th scope="row">@count</th>
-                <td>@item.ProjectName</td>
-                <td><a href="/Project/DeleteProject/@item.ProjectID" class="btn btn-outline-danger">SİL</a></td>
-                <td><a href="/Project/UpdateProject/@item.ProjectID" class="btn btn-outline-warning">DÜZENLE</a></td>
+                <th scope="col">#</th>
+                <th scope="col">PROJE ADI</th>
+                <th scope="col"> SİL</th>
+                <th scope="col"> DÜZENLE</th>
             </tr>
-        }
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th scope="row">@count</th>
+                    <td>@item.ProjectName</td>
+                    <td><a href="/Project/DeleteProject/@item.ProjectID" class="btn btn-outline-danger">SİL</a></td>
+                    <td><a href="/Project/UpdateProject/@item.ProjectID" class="btn btn-outline-warning">DÜZENLE</a></td>
+                </tr>
+            }
 
-    </tbody>
-</table>
-<a href="/AddProject" class="btn btn-outline-primary"></a>
+        </tbody>
+    </table>
+    <a href="/Project/AddProject" class="btn btn-primary">YENİ PROJE EKLE</a>
+</div>

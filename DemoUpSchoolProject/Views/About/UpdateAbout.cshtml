@@ -3,7 +3,7 @@
     ViewBag.Title = "UpdateAbout";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     @Html.HiddenFor(x=>x.AboutID)
     <label>Ad Soyad</label>
     @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
@@ -15,7 +15,8 @@
     @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
     <br />
     <label>Image URL</label>
-    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", @type = "file" })
+    <br />
     <button class="btn btn-warning">GÜNCELLE</button>
 </form>
 

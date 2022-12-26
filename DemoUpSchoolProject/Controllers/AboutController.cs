@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,6 +27,14 @@ namespace DemoUpSchoolProject.Controllers
         [Authorize]
         public ActionResult AddAbout(TBL_About about)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/ProjectImages/" + dosyaAdi;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                about.ImageUrl = "ProjectImages/" + dosyaAdi;
+            }
             db.TBL_About.Add(about);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -48,6 +57,14 @@ namespace DemoUpSchoolProject.Controllers
         [Authorize]
         public ActionResult UpdateAbout(TBL_About about)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/ProjectImages/" + dosyaAdi;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                about.ImageUrl = "ProjectImages/" + dosyaAdi;
+            }
             var values = db.TBL_About.Find(about.AboutID);
             values.Description = about.Description;
             values.ImageUrl = about.ImageUrl;

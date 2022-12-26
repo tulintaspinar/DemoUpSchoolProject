@@ -1,4 +1,4 @@
-﻿
+﻿@model DemoUpSchoolProject.Models.Entities.TBL_Message
 <section class="w3l-contactblock" id="contact">
     <div class="midd-w3 py-5">
         <div class="container py-lg-4 py-md-3">
@@ -10,8 +10,7 @@
             <div class="row mt-md-5 mt-4 pt-lg-3">
                 <div class="col-lg-5">
                     <p>
-                        I’m open to any communication! Feel free to contact me any convenient way!
-                        I’m always interested in hearing about new projects and opportunities.
+                        Benimle iletişime geç!
                     </p>
                     <ul class="address mt-md-5 mt-4">
                         <li class="mb-4">
@@ -24,19 +23,15 @@
 
                 </div>
                 <div class="col-lg-7 mt-lg-0 mt-md-5 mt-4">
-                    <form action="https://sendmail.w3layouts.com/submitForm" method="post">
+                    <form method="post">
                         <div class="twice-two">
-                            <input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="İsim"
-                                   required="">
-                            <input type="email" class="form-control" name="w3lSender" id="w3lSender" placeholder="Email"
-                                   required="">
+                            @Html.TextBoxFor(x => x.SenderNameSurname, new {@class="form-control", placeholder = "İsim ve Soyisminiz", required = "" })
+                            @Html.TextBoxFor(x => x.SenderMail, new {@class="form-control", placeholder = "Mail Adresiniz", required = "" })
                         </div>
                         <div class="twice">
-                            <input type="text" class="form-control" name="w3lSubject" id="w3lSubject"
-                                   placeholder="Konu Başlığı" required="">
+                            @Html.TextBoxFor(x => x.MessageSubject, new { @class = "form-control", placeholder = "Konu Başlığı", required = "" })
                         </div>
-                        <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Mesaj"
-                                  required=""></textarea>
+                        @Html.TextAreaFor(x=>x.MessageContent, new { @class = "form-control", placeholder = "Konu Başlığı", required = "" })
                         <div class="text-right">
                             <button type="submit" class="btn btn-secondary btn-style mt-4">Gönder</button>
                         </div>

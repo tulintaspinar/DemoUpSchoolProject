@@ -1,13 +1,15 @@
 ﻿@model DemoUpSchoolProject.Models.Entities.TBL_PROJECT
 @{
-    ViewBag.Title = "AddProject";
+    ViewBag.Title = "UpdateProject";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <div class="container">
     <form method="post" enctype="multipart/form-data">
+        <br />
         <label>PROJE ADI</label>
-        <input type="text" name="ProjectName" class="form-control"/>
+        @Html.TextBoxFor(x => x.ProjectName, new {@class="form-control"})
+        <br />
         <label>PROJE RESMİ</label>
         <input type="file" name="ProjectImage" class="form-control" />
         <br />

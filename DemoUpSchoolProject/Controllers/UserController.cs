@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DemoUpSchoolProject.Models.Entities;
+using Microsoft.Ajax.Utilities;
 
 namespace DemoUpSchoolProject.Controllers
 {
@@ -12,7 +13,6 @@ namespace DemoUpSchoolProject.Controllers
         UpSchoolDbPortfolioEntities db = new UpSchoolDbPortfolioEntities();
         public ActionResult Index()
         {
-            
             return View();
         }
         public PartialViewResult AboutPartial()
@@ -45,10 +45,22 @@ namespace DemoUpSchoolProject.Controllers
         }
         public PartialViewResult ProjectsPartial()
         {
-            return PartialView();
+            var values = db.TBL_PROJECT.ToList();
+            return PartialView(values);
         }
+        [HttpGet]
         public PartialViewResult ContactsPartial()
         {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult ContactsPartial(TBL_Message message)
+        {
+            message.ReceiverMail = "tulin@gmail.com";
+            message.ReceiverNameSurname = "Tülin Taşpınar";
+            message.MessageDate = DateTime.Now;
+            db.TBL_Message.Add(message);
+            db.SaveChanges();
             return PartialView();
         }
     }

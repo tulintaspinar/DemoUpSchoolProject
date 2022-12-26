@@ -33,7 +33,6 @@ namespace DemoUpSchoolProject.Controllers
         }
         public ActionResult Logout()
         {
-
             return RedirectToAction("Index");
         }
     }
